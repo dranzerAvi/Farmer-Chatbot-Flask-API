@@ -100,8 +100,12 @@ def query_example():
         else:
             translated_human_text=translator_hindi(language)
             translated_human_text=translated_human_text.text
-            if generate_greeting_response(translated_human_text) != None:
-                greeting_response_translated=translator_english(generate_greeting_response(language))
+            # type(generate_greeting_response(translated_human_text))
+            greetingToBeTranslated=generate_greeting_response(translated_human_text)
+            if greetingToBeTranslated != None:
+                
+                greetingToBeTranslated=generate_greeting_response(translated_human_text)
+                greeting_response_translated=translator_english(greetingToBeTranslated)
                 responseText="मरियम: " + greeting_response_translated.text
                 
             else:
